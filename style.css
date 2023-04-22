@@ -1,0 +1,590 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+}
+
+.topbar{
+    position: fixed;
+    background: #005A9C;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 125px 9fr 0.4fr;
+    align-items: center;
+    z-index: 1;
+}
+
+.topbar i{
+    color: #f5f5f7;
+}
+
+.search{
+    position: relative;
+    width: 60%;
+    justify-self: center;
+}
+
+.search input{
+    width: 100%;
+    height: 40px;
+    padding: 0 40px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #005A9C;
+}
+.search i{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #005A9C;
+    cursor: pointer;
+}
+
+.bell{
+    display: flex;
+    justify-self: center;
+}
+
+.user{
+    position: relative;
+    width: 150;
+    height: 40px;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    /* width: 100%; */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* sidebar starts here */
+.sidebar{
+    position: fixed;
+    top: 60px;
+    width: 260px;
+    height: calc(100% - 60px);
+    background-color: rgb(64,156,255);
+    overflow-x: hidden;
+}
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    width: 100%;
+    list-style: none;   
+}
+
+.sidebar ul li:hover{
+    background: #f5f5f7;
+}
+
+.sidebar ul li:hover a{
+    color: #005A9C;
+}
+
+.sidebar ul .hover{
+    background: #f5f5f7;
+}
+
+.sidebar ul .hover a{
+    color: #005A9C;
+}
+
+.sidebar ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: #f5f5f7;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i{
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* main starts here */
+#dashboardSection,
+#campaignSection,
+#employeesSection,
+#analyticSection,
+#earningsSection,
+#directorySection,
+#accountingSection,
+#settingsSection,
+#helpSection
+{
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 260px);
+    left: 260px;
+    min-height: calc(100vh - 60px);
+    background: #f5f5f7;
+}
+
+#campaignSection,
+#employeesSection,
+#analyticSection,
+#earningsSection,
+#accountingSection,
+#directorySection,
+#settingsSection,
+#helpSection{
+    display: none;
+}
+
+/* dashboard section starts here */
+.month{
+    padding: 20px 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+.month select{
+    border: #005A9C 3px solid;
+    background-color: #f5f5f7;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px;
+    font-weight: bold;
+    color: #1d1d1f;
+}
+
+.cards{
+    width: calc(100% - 260px);
+    height: 150px;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    position: fixed;
+    z-index: 1;
+}
+
+.cards .card{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f7;
+    border-radius: 10px;
+    border: 3px solid #005A9C;
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+.cards :nth-child(2) .card-name,
+.cards :nth-child(3) .card-name,
+.cards :nth-child(5) .card-name{
+    padding: 16px 0 0 0;
+}
+
+.cards .card:hover{
+    background: rgb(64,156,255);
+}
+
+.cards .card:hover .number, 
+.cards .card:hover .card-name,
+.cards .card:hover .icon-box i{
+    color: #f5f5f7;
+}
+
+.number{
+    font-size: 26px;
+    font-weight: bold;
+    color: #1d1d1f;
+}
+
+.card-name{
+    color: #005A9C;
+    font-weight: 600;
+    font-size: 16px; 
+}
+
+.icon-box i{
+    font-size: 30px;
+    color: #005A9C;
+}
+
+/* charts starts here */
+.charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    margin-top: 150px;
+}
+
+.chart{
+    background: #f5f5f7;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #005A9C;
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: calc(100vh - 300px);
+
+}
+
+.chart h2{
+    color: #1d1d1f;
+}
+
+#pieChart, #pieChart2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* campaign section starts here */
+.campaignCards{
+    width: calc(100% - 260px);
+    height: auto;
+    padding: 20px 20px 0px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    position: fixed;
+    background: #f5f5f7;
+    z-index: 1;
+}
+
+.campaignCards .campaignCard{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+}
+
+.campaignCards .campaignCard:hover{
+    background: #ffbf00;
+}
+
+.campaignCards .campaignCard img{
+    width: 100%;
+    border-radius: 50px;
+}
+
+.campaignCards .campaignCard h2{
+    color: #ffbf00;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.campaignCards .campaignCard h4{
+    color: #ffbf00;
+    font-weight: bold;
+    text-align: center;
+}
+
+.campaignCards .campaignCard:hover h2,
+.campaignCards .campaignCard:hover h4{
+    color: black;
+}
+
+#campaignContent .header{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+}
+
+#campaignContent .header h1{
+    margin-left: 20px;
+}
+
+#campaignContent .content table{
+    border: 3px solid black;
+    margin: 20px;
+}
+
+#campaignContent .content table th{
+    font: 20px;
+    background-color: #ffbf00;
+    color: black;
+    border: 3px solid black;
+}
+#campaignContent .content table tr td{
+    font: 20px;
+    color: black;
+    border: 3px solid black;
+}
+
+/* employees section starts here */
+.employeesCards{
+    width: calc(100% - 260px);
+    height: 150px;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    position: fixed;
+    background: #f5f5f7;
+    z-index: 1;
+}
+
+.employeesCards .employeesCard{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+}
+
+.employeesCards .employeesCard:hover{
+    background: #ffbf00;
+}
+
+.employeesCards .employeesCard:hover .number, 
+.employeesCards .employeesCard:hover .card-name,
+.employeesCards .employeesCard:hover .icon-box i{
+    color: black;
+}
+
+/* earnings section starts here */
+.employeesCards{
+    width: calc(100% - 260px);
+    height: 150px;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    position: fixed;
+    background: #f5f5f7;
+    z-index: 1;
+}
+
+.employeesCards .employeesCard{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+}
+
+.employeesCards .employeesCard:hover{
+    background: #ffbf00;
+}
+
+.employeesCards .employeesCard:hover .number, 
+.employeesCards .employeesCard:hover .card-name,
+.employeesCards .employeesCard:hover .icon-box i{
+    color: black;
+}
+
+/* earnings section starts here */
+.accountingContainer{
+    height: inherit;
+    width: 100%;
+    padding: 20px;
+}
+
+.accountingContainer button{
+    height: 50px;
+    font-size: 30px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.incomeBtn{
+    background-color: green;
+    color: white;
+}
+
+.expenseBtn{
+    background-color: red;
+    color: white;
+}
+
+.accountingContainer,
+.accountingContainer form input,
+.accountingContainer form select{
+    font-size: 20px;
+}
+
+#income{
+    padding: 20px 0;
+    /* border: 3px solid black; */
+    background-color: lightgreen;
+    display: none;
+}
+
+#expense{
+    padding: 20px 0;
+    /* border: 3px solid black; */
+    background-color: lightcoral;
+    display: none;
+}
+
+.accountingContainer .row1,
+.accountingContainer .row3{
+    display: grid;
+    grid-template-columns: 18% 77%;
+    padding: 10px 0;
+}
+
+.accountingContainer .row2{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 5%;
+}
+.accountingContainer .row2-2{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 10px 0;
+}
+
+.accountingContainer .row3-3{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    padding: 10px 0;
+    column-gap: 4%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.accountingContainer .row3-3 label{
+    text-align: center !important;
+}
+
+.accountingContainer label{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.expenseButtons{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.expenseButtons #expenseSubmitBtn{
+    background-color: blue;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.expenseButtons #expenseResetBtn{
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+/* Responsive starts here */
+@media (max-width:1115px){
+    .sidebar{
+        width: 60px;
+    }
+    #dashboardSection,
+    #campaignSection,
+    #employeesSection,
+    #analyticSection,
+    #earningsSection,
+    #directorySection,
+    #accountingSection,
+    #settingsSection,
+    #helpSection{
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 60px);
+    left: 60px;
+    min-height: calc(100vh - 60px);
+    background: #f5f5f7;
+    }
+    .main{
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+    .cards{
+        width: calc(100% - 60px);
+    }
+    .card .card-name{
+        font-size: 16px;
+    }
+    .card .number{
+        font-size: 16px;
+    }
+    .cards :nth-child(2) .card-name,
+    .cards :nth-child(3) .card-name,
+    .cards :nth-child(5) .card-name{
+    padding: 16px 0 0 0;
+}
+}
+
+@media (max-width:880px){
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .charts{
+        grid-template-columns: 1fr;
+    }
+    .charts{
+        margin-top: 300px;
+    }
+}
+
+@media (max-width:500px){
+    .cards{
+        grid-template-columns: 1fr;
+    }
+    .topbar{
+        grid-template-columns: 125px 5fr 0.4fr;
+    }
+    .logo h2{
+        font-size: 20px;
+    }
+    .search{
+        width: 80%;
+    }
+    .search input{
+        padding: 0 20px;
+    }
+    .topbar i{
+        margin-right: 5px;
+    }
+    .charts{
+        margin-top: 650px;
+    }
+}

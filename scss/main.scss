@@ -1,82 +1,568 @@
 @use 'variables';
 @use 'mixins';
+@import url('https://fonts.cdnfonts.com/css/inter');
 
-* {
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+// login 
+.container-login
+{
+    height: 100vh;
+    background-color: variables.$white;
+}
+
+.bottombar
+{
+    position: absolute;
+    background: variables.$primary_color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    padding: 0 20px;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+}
+
+.login-logo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-logo img
+{
+    width: 150px;
+    border-radius: 10px;
+}
+
+.login-logo p
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: variables.$white;
+}
+
+.login-box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: variables.$primary_color;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.checkbox
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.checkbox input
+{
+    cursor: pointer;
+}
+
+.checkboxlabel{
+    color: variables.$white;
+}
+
+.checkbox a
+{
+    text-decoration: none;
+    color: variables.$white !important;
+    cursor: pointer;
 }
   
-.container {
-  padding: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(3, 1fr);
-  gap: 50px;
-  place-items: center;
+.login-box .user-box
+{
+    position: relative;
+}
+  
+.login-box .user-box input
+{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: variables.$white;
+    border-bottom: 1px solid variables.$white !important;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: variables.$primary_color;
+    border-radius: 10px;
 }
 
-.orange{
-    background-color: variables.$color1;
+.login-box .user-box label
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: variables.$white;
+    pointer-events: none;
+    transition: .5s;
 }
 
-.red{
-    background-color: variables.$color2;
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label
+{
+    top: -30px;
+    left: 0;
+    color: variables.$skyblue;
+    font-size: 14px;
+}
+  
+.buttons
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
 
-.green{
-    background-color: variables.$color3;
+.button
+{
+    position: relative;
+    padding: 10px 10px;
+    width: 100%;
+    color: variables.$skyblue;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    background: linear-gradient(#141e30, #243b55);
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.blue{
-    background-color: variables.$color4;
+.button:hover
+{
+    background: variables.$skyblue;
+    color: variables.$white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px variables.$skyblue,
+                0 0 25px variables.$skyblue,
+                0 0 50px variables.$skyblue,
 }
 
-.triangle-left {
-    @include mixins.shapeDesign(0,0);
-    border-top: variables.$border1;
-    border-bottom: variables.$border1;
-    border-right: 100px solid variables.$color4;
+// admin page
+.topbar
+{
+    position: fixed;
+    background: variables.$primary_color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 125px 3fr 4fr 3fr 0.4fr;
+    align-items: center;
+    z-index: 1;
 }
 
-.triangle-up {
-    @include mixins.shapeDesign(0,0);
-    border-left: variables.$border1;
-    border-right: variables.$border1;
-    border-bottom: 100px solid variables.$color1;
+.topbar i
+{
+    color: variables.$white;
 }
 
-.triangle-down {
-    @include mixins.shapeDesign(0,0);
-    border-left: variables.$border1;
-    border-right: variables.$border1;
-    border-top: 100px solid variables.$color2;
+.logo h2
+{
+    color: variables.$white;
 }
 
-.triangle-right {
-    @include mixins.shapeDesign(0,0);
-    border-top: variables.$border1;
-    border-bottom: variables.$border1;
-    border-left: 100px solid variables.$color3;
+.search4
+{
+    position: relative;
+    width: 60%;
+    justify-self: center;
 }
 
-.ellipse-horizontal {
-    @include mixins.ellipseDesign(180px, 90px)
+.search input
+{
+    width: 100%;
+    height: 40px;
+    padding: 0 40px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: variables.$white;
+    color: variables.$primary_color;
 }
 
-.ellipse-vertical {
-    @include mixins.ellipseDesign(90px, 180px)
+.search i
+{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: variables.$primary_color;
+    cursor: pointer;
 }
 
-.rectangle-horizontal {
-    @include mixins.shapeDesign(120px, 80px)
+.bell
+{
+    display: flex;
+    justify-self: center;
 }
 
-.rectangle-vertical {
-    @include mixins.shapeDesign(80px, 120px)
+.user
+{
+    position: relative;
+    width: 150;
+    height: 60px;
 }
 
-.rectangleNew{
-    color: gray;
-    background-color: black;
+.user img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* sidebar starts here */
+.sidebar
+{
+    position: fixed;
+    top: 60px;
+    width: 260px;
+    height: calc(100% - 60px);
+    background-color: variables.$lightblue;
+    overflow-x: hidden;
+}
+.sidebar ul
+{
+    margin-top: 20px;
+}
+
+.sidebar ul li
+{
+    width: 100%;
+    list-style: none;   
+}
+
+.sidebar ul li:hover
+{
+    background: variables.$white;
+}
+
+.sidebar ul li:hover a
+{
+    color: variables.$primary_color;
+}
+
+.sidebar ul .hover
+{
+    background: variables.$white;
+}
+
+.sidebar ul .hover a
+{
+    color: variables.$primary_color;
+}
+
+.sidebar ul li a
+{
+    width: 100%;
+    text-decoration: none;
+    color: variables.$white;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i
+{
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* main starts here */
+#dashboardSection,
+#forApprovalSection,
+#historySection,
+#carRepairHistorySection,
+#settingsSection,
+#helpSection
+{
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 260px);
+    left: 260px;
+    min-height: calc(100vh - 60px);
+    background: variables.$white;
+}
+
+#forApprovalSection,
+#historySection,
+#carRepairHistorySection,
+#settingsSection,
+#helpSection
+{
+    display: none;
+}
+
+/* dashboard section starts here */
+.dropDownsHolderHolder
+{
+    width: calc(70% - 20px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px 20px 0 20px;
+    z-index: 1;
+}
+
+.dropDownsHolder
+{
+    width: 100%;
+}
+
+.dropDowns
+{
+    width: 100%;
+}
+.dropDowns select
+{
+    border: 1px solid variables.$black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: variables.$white;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px;
+    font-weight: bold;
+    color: variables.$black;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+}
+
+.cards
+{
+    width: calc(100% - 260px);
+    display: grid;
+    grid-template-columns: calc(70% - 20px) 20px 30%;
+    height: 100px;
+    padding: 20px;
+
+
+    position: fixed;
+    z-index: 1;
+}
+
+.cardHolder1
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.cardHolder2
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.cards .card
+{
+    padding: 10px;
+    min-width: 250px;
+    width: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: variables.$white;
+    border-radius: 10px;
+    border: 1px solid variables.$black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.cards .card:hover
+{
+    background: variables.$skyblue;
+}
+
+.cards .card .hover
+{
+    background: variables.$skyblue;
+}
+
+.cards .card:hover .number, 
+.cards .card:hover .card-name,
+.cards .card:hover .icon-box i{
+    color: variables.$white;
+}
+
+.number{
+    font-size: 26px;
+    font-weight: bold;
+    color: variables.$black;
+    text-align: center;
+}
+
+.card-name{
+    color: variables.$primary_color;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+.icon-box i{
+    font-size: 30px;
+    color: variables.$primary_color;
+}
+
+/* charts starts here */
+.charts{
+    display: grid;
+    grid-template-columns: calc(70% - 20px) 30%;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    margin-top: 200px;
+    overflow: hidden;
+}
+
+.chart1, .chart2{
+    background: variables.$white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid variables.$black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: calc(100vh - 370px);
+}
+
+.chart1 .hover{
+
+}
+
+
+.chart h2{
+    color: #1d1d1f;
+}
+
+#pieChart{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive starts here */
+@media (max-width:1450px){
+    .number{
+        font-size: 21px;
+    }
+    
+    .card-name{
+        font-size: 11px;
+    }
+    .cards .card
+    {
+    min-width: 150px;
+    }
+}
+
+@media (max-width:1115px){
+    .sidebar{
+        width: 60px;
+    }
+    #dashboardSection,
+    #forApprovalSection,
+    #historySection,
+    #carRepairHistorySection,
+    #settingsSection,
+    #helpSection
+    {
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 60px);
+    left: 60px;
+    min-height: calc(100vh - 60px);
+    }
+    .main{
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+    .cards{
+        width: calc(100% - 60px);
+    }
+    .card .card-name{
+        font-size: 16px;
+    }
+    .card .number{
+        font-size: 16px;
+    }
+    .card .number{
+        font-size: 16px;
+    }
+    .dropDowns select
+    {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:880px){
+    .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .charts{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:500px){
+    .cards{
+        grid-template-columns: 1fr;
+    }
+    .topbar{
+        grid-template-columns: 125px 5fr 0.4fr;
+    }
+    .logo h2{
+        font-size: 20px;
+    }
+    .search{
+        width: 80%;
+    }
+    .search input{
+        padding: 0 20px;
+    }
+    .topbar i{
+        margin-right: 5px;
+    }
+    .charts{
+        margin-top: 650px;
+    }
 }
