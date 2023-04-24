@@ -1,26 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main-css/main.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="triangle-left"></div>
-      <div class="triangle-right"></div>
-      <div class="triangle-down"></div>
-      <div class="triangle-up"></div>
-      <div class="ellipse-horizontal red"></div>
-      <div class="ellipse-vertical orange"></div>
-      <div class="ellipse-horizontal blue"></div>
-      <div class="ellipse-vertical green"></div>
-      <div class="rectangle-vertical blue"></div>
-      <div class="rectangle-horizontal red"></div>
-      <div class="rectangle-vertical orange"></div>
-      <div class="rectangle-horizontal blue"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEET MANAGEMENT SYSTEM</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="main-css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+</head>
+<body>
+    <div class="container-login">
+        <div class="topbar">
+            <div></div>
+            <div class="logo">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="bottombar">
+
+        </div>
     </div>
-  </body>
+    <div class="login-box">
+        <div class="login-logo">
+            <img src="images/logo.png" alt="">
+        </div><br>
+        <form name="login">
+            <div id="error-message"></div><br>
+            <div class="user-box">
+                <input type="text" name="username" id="username" required="">
+                <label>Employee ID:</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" id="password" required="">
+                <label>Password:</label>
+            </div>
+            <div class="checkbox">
+                <div>
+                    <input type="checkbox" onclick="show()" class="smallbox" value="">
+                    <label class="checkboxlabel">Show Password</label> 
+                </div>
+                <a href="">Forgot Password</a>
+            </div>
+            <div class="buttons">
+                <div class="button1">
+                    <button type="submit" class="button">Login</button>
+                </div>
+                <div class="button2">
+                    <button type="reset" class="button">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.forms.login;
+        const username = form.username;
+        const password = form.password;
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            if(username.value == 'nemuel' && password.value == 'mcsnemuel'){
+                window.location.assign("ryan.html")
+            }
+            else if (username.value == 'leo' && password.value == 'mcsleo'){
+                window.location.assign("leomar.html")
+            }
+            else if(username.value == 'alberto' && password.value == 'mcsalberto'){
+                window.location.assign("alberto.html")
+            }
+            else if(username.value == 'clinton' && password.value == 'mcsclinton'){
+                window.location.assign("clinton.html")
+            }
+            else if(username.value == 'eunice' && password.value == 'mcseunice'){
+                window.location.assign("eunice.html")
+            }
+            else if(username.value == 'crisanto' && password.value == 'mcscrisanto'){
+                window.location.assign("field6.html")
+            }
+            else if(username.value == 'field7' && password.value == 'mcsfield7'){
+                window.location.assign("field7.html")
+            }
+            else if(username.value == 'field8' && password.value == 'mcsfield8'){
+                window.location.assign("field8.html")
+            }
+            else if(username.value == 'field9' && password.value == 'mcsfield9'){
+                window.location.assign("field9.html")
+            }
+            else if(username.value == 'field10' && password.value == 'mcsfield10'){
+                window.location.assign("field10.html")
+            }
+            else if(username.value == 'admin' && password.value == 'admin'){
+                window.location.assign("admin.html")
+            }
+            else{
+                document.getElementById('error-message').innerText = 'Username and Password did not match'
+                document.getElementById('error-message').style.color = 'red'
+            }
+        })
+
+        form.addEventListener('reset', function(event){
+            event.preventDefault();
+            document.getElementById('error-message').innerText = '';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        })
+
+        function show(){
+            var input = document.getElementById('password');
+            if(input.type === 'password'){
+                input.type = 'text'}
+            else{
+                input.type = 'password'
+            }
+        }
+    </script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.1/apexcharts.min.js"></script>
+    <script src="main.js"></script>
+</body>
 </html>
