@@ -1,26 +1,11 @@
-<<<<<<< HEAD
 var pmsData = {
   name: "PMS",
   data: [256, 384, 297, 436]
-=======
-var pmsData = ""
-var corData = ""
-
-fetch()
-
-pmsData = {
-  name: "PMS",
-  pmsData: [256, 384, 297, 436]
->>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 }
 
 var correctiveData = {
   name: "CORRECTIVE",
-<<<<<<< HEAD
   data: [384, 297, 436, 256]
-=======
-  corData: [384, 297, 436, 256]
->>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 }
 
 var barChartOptions = {
