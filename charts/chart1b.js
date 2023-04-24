@@ -5,7 +5,11 @@ var correctiveData = {
 
 var barChartOptions = {
     series: [
+<<<<<<< HEAD
       correctiveData
+=======
+      correctiveData,
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     ],
     chart: {
     type: 'bar',
@@ -56,5 +60,10 @@ var barChartOptions = {
   },
 };
 
+<<<<<<< HEAD
   var barChartB = new ApexCharts(document.querySelector("#barChartB"), barChartOptions);
   barChartB.render();
+=======
+  var barChart = new ApexCharts(document.querySelector("#barChartB"), barChartOptions);
+  barChart.render();
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb

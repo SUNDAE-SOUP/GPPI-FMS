@@ -1,8 +1,13 @@
 var options = {
     series: [44, 55, 41, 17, 15],
     chart: {
+<<<<<<< HEAD
     height: 350,
     type: 'donut',
+=======
+    height: 400,
+    type: 'pie',
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
   },
   plotOptions: {
     pie: {

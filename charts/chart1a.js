@@ -5,7 +5,11 @@ var pmsData = {
 
 var barChartOptions = {
     series: [
+<<<<<<< HEAD
       pmsData
+=======
+      pmsData,
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     ],
     chart: {
     type: 'bar',

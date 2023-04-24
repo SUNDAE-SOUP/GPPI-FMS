@@ -313,7 +313,10 @@
     left: 260px;
     min-height: calc(100vh - 60px);
     background: variables.$white;
+<<<<<<< HEAD
     padding: 20px;
+=======
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 }
 
 #forApprovalSection,
@@ -328,21 +331,32 @@
 /* dashboard section starts here */
 .dropDownsHolderHolder
 {
+<<<<<<< HEAD
     width: calc(100% - 260px);
     display: grid;
     grid-template-columns: calc(70% - 20px) 20px 30%;
     height: 50px;
     padding-bottom: 20px;
     position: fixed;
+=======
+    width: calc(70% - 20px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px 20px 0 20px;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     z-index: 1;
 }
 
 .dropDownsHolder
 {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 10px;
+=======
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     width: 100%;
 }
 
@@ -362,24 +376,43 @@
     color: variables.$black;
     width: 100%;
     text-align: center;
+<<<<<<< HEAD
+=======
+    height: 70px;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 }
 
 .cards
 {
+<<<<<<< HEAD
     margin-top: 70px;
+=======
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     width: calc(100% - 260px);
     display: grid;
     grid-template-columns: calc(70% - 20px) 20px 30%;
     height: 100px;
+<<<<<<< HEAD
     padding-bottom: 20px;
+=======
+    padding: 20px;
+
+
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     position: fixed;
     z-index: 1;
 }
 
 .cardHolder1
 {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+=======
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     gap: 10px;
     margin-bottom: 10px;
     width: 100%;
@@ -387,10 +420,17 @@
 
 .cardHolder2
 {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: .5fr 1fr 1fr .5fr;
     justify-content: center;
     gap: 10px;
+=======
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     margin-bottom: 10px;
     width: 100%;
 }
@@ -399,7 +439,11 @@
 {
     padding: 10px;
     min-width: 250px;
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 32%;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     display: flex;
     align-items: center;
     justify-content: center;
@@ -409,6 +453,10 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 .cards .card:hover
 {
     background: variables.$skyblue;
@@ -450,8 +498,14 @@
     grid-template-columns: calc(70% - 20px) 30%;
     grid-gap: 20px;
     width: 100%;
+<<<<<<< HEAD
     padding-top: 0;
     margin-top: 250px;
+=======
+    padding: 20px;
+    padding-top: 0;
+    margin-top: 200px;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     overflow: hidden;
 }
 
@@ -462,6 +516,7 @@
     border: 1px solid variables.$black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
+<<<<<<< HEAD
     height: calc(100vh - 350px);
 }
 
@@ -469,6 +524,16 @@
     position: relative;
 }
 
+=======
+    height: calc(100vh - 370px);
+}
+
+.chart1 .hover{
+
+}
+
+
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 .chart h2{
     color: #1d1d1f;
 }
@@ -480,6 +545,7 @@
     align-items: center;
 }
 
+<<<<<<< HEAD
 .Tat{
     position: absolute;
     top: 180px;
@@ -647,6 +713,8 @@
 }
 
 
+=======
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
 /* Responsive starts here */
 @media (max-width:1450px){
     .number{
@@ -711,6 +779,12 @@
 }
 
 @media (max-width:500px){
+<<<<<<< HEAD
+=======
+    .cards{
+        grid-template-columns: 1fr;
+    }
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     .topbar{
         grid-template-columns: 125px 5fr 0.4fr;
     }
@@ -726,6 +800,7 @@
     .topbar i{
         margin-right: 5px;
     }
+<<<<<<< HEAD
 
     // dashboard section
     .dropDownsHolderHolder,
@@ -769,5 +844,9 @@
     .approvalResponse{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+=======
+    .charts{
+        margin-top: 650px;
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
     }
 }

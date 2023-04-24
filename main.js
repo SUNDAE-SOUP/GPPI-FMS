@@ -15,6 +15,10 @@ sidebarTabs.forEach((tab ,index) => {
             mainSections.forEach((section, sectionIndex) => {
                 if(sectionIndex === index){
                     section.setAttribute("style", "display: block")
+<<<<<<< HEAD
+=======
+                    console.log("meet")
+>>>>>>> 1e4b86ae7ccc609ac0dc731dff40b25644912bcb
                 }
                 else{
                     section.setAttribute("style", "display: none");    
